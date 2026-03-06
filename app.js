@@ -10,15 +10,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-    res.render("index", { title: "Home" });
+  res.render("index", { title: "Home" });
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact", { title: "Contact" });
+  res.render("contact", { title: "Contact" });
 });
 
 app.get("/experience", (req, res) => {
-    res.render("experience", { title: "Professional Experience" });
+  res.render("experience", { title: "Professional Experience" });
 });
 
 app.post("/contact", async (req, res) => {
@@ -29,10 +29,12 @@ app.post("/contact", async (req, res) => {
       throw new Error("Environment variables missing");
     }
 
+    // ✅ Render-safe SMTP configuration
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
       secure: false,
+      family: 4, // ⭐ forces IPv4 (fixes Render ENETUNREACH error)
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -40,12 +42,12 @@ app.post("/contact", async (req, res) => {
     });
 
     await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL}>`,  // ✅ Important fix
-      replyTo: email,                                      // ✅ Safe reply handling
+      from: `"Portfolio Contact" <${process.env.EMAIL}>`,
+      replyTo: email,
       to: process.env.EMAIL,
       subject: `New message from ${name}`,
       html: `
-        <h3>New Contact Form Submission</h3>
+        <h2>Portfolio Contact Message</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
@@ -54,7 +56,6 @@ app.post("/contact", async (req, res) => {
     });
 
     res.send("Message sent successfully 🚀");
-
   } catch (err) {
     console.error("MAIL ERROR:", err);
     res.send("Error sending message");
