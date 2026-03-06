@@ -1,0 +1,257 @@
+<%- include("partials/header") %>
+
+<!-- HERO SECTION -->
+<section class="hero-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Side Text -->
+      <div class="col-lg-7 text-center text-lg-start fade-in">
+        <h1 class="display-4 fw-bold">
+          Hi, I'm <span class="text-primary">Pardhu Alapati</span>
+        </h1>
+       <h4 class="mt-3 mb-4 hero-subtitle">
+  Senior Data Analyst | BI & Cloud Analytics Specialist
+</h4>
+        <p class="lead">
+          Transforming complex financial, healthcare & enterprise data into
+          scalable dashboards, predictive insights, and executive decision systems.
+        </p>
+
+        <div class="mt-4">
+          <a href="/experience" class="btn btn-primary btn-lg me-3">
+            View Experience
+          </a>
+          <a href="/contact" class="btn btn-outline-dark btn-lg">
+            Contact Me
+          </a>
+
+          <a href="https://www.linkedin.com/in/pardhualapati"
+     target="_blank"
+     class="fs-3 text-primary">
+     <i class="fab fa-linkedin"></i>
+  </a>
+
+        </div>
+      </div>
+
+      <!-- Right Side Image -->
+      <div class="col-lg-5 text-center fade-in">
+        <div class="profile-wrapper">
+          <img src="/images/profile.jpeg" alt="Pardhu"
+               class="profile-img">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills-section py-5">
+  <div class="container">
+    <div class="text-center mb-5 fade-in">
+      <h2 class="fw-bold">Technical Expertise</h2>
+      <p class="text-muted">Enterprise Analytics | Cloud | Data Engineering</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <<h5><i class="fas fa-cloud me-2 text-primary"></i>Cloud & Data Platforms</h5>
+          <p>AWS (S3, Redshift, EC2, RDS, Glue, Lambda, EMR), Databricks, Snowflake</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-chart-line me-2 text-primary"></i>BI & Visualization</h5>
+          <p>Tableau (Desktop & Server), Power BI (Desktop & Service)</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-database me-2 text-primary"></i>Databases</h5>
+          <p>SQL Server, MySQL, PostgreSQL, Redshift, MSSQL, NoSQL, Snowflake Schema</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-code me-2 text-primary"></i>Programming</h5>
+          <p>SQL, Python (Pandas, NumPy, Scikit-learn), Shell Scripting</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-gears me-2 text-primary"></i>Data Engineering & Big Data</h5>
+          <p>ETL Pipelines, Airflow, PySpark, Delta Lake, Teradata (Conceptual)</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-chart-pie me-2 text-primary"></i>Analytics</h5>
+          <p>A/B Testing, Regression, Forecasting, Hypothesis Testing, Feature Engineering</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-shield-halved me-2 text-primary"></i>Governance</h5>
+          <p>Row-Level Security, Data Validation, Audit Reporting</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-people-group me-2 text-primary"></i>Collaboration & Version Control</h5>
+          <p>GIT, JIRA, Confluence, MS Teams, Slack</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-toolbox me-2 text-primary"></i>Tools</h5>
+          <p>Google Sheets, MS Excel (Advanced)</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="skill-card">
+          <h5><i class="fas fa-lightbulb me-2 text-primary"></i>Other Skills</h5>
+          <p>KPI & Scorecards, Dashboard Optimization, Data Storytelling, Ad-hoc Reporting, GEN AI</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+
+/* HERO SECTION */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+[data-theme="dark"] .hero-section {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #0d6efd;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  transition: 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  background: #f8f9fa;
+}
+
+[data-theme="dark"] .skills-section {
+  background: #181818;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.4s ease;
+}
+
+[data-theme="dark"] .skill-card {
+  background: rgba(30,30,30,0.9);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Fade Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+
+<script>
+const faders = document.querySelectorAll(".fade-in");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+</script>
+
+<!-- Resume Modal -->
+<div class="modal fade" id="resumeModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Pardhu Alapati - Resume</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <iframe 
+          src="/Resume.pdf"
+          width="100%" 
+          height="600px"
+          style="border:none;">
+        </iframe>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <a href="/Resume.pdf" download class="btn btn-success">
+          <i class="bi bi-download"></i> Download Resume
+        </a>
+
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<%- include("partials/footer") %>

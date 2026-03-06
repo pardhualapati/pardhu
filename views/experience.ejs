@@ -1,0 +1,153 @@
+<%- include("partials/header") %>
+
+<section class="experience-page">
+  <div class="container py-5">
+
+    <div class="text-center mb-5 fade-in">
+      <h1 class="fw-bold display-5">Professional Experience</h1>
+      <p class="text-muted">Enterprise Analytics | Business Intelligence | Data Engineering</p>
+    </div>
+
+    <!-- Fifth Third Bank -->
+    <div class="exp-card fade-in">
+      <h3>Fifth Third Bank</h3>
+      <h6 class="text-primary">Sr. Data Analyst | Dec 2024 – Present | Ohio</h6>
+      <ul>
+        <li>Translated complex finance & regulatory requirements into enterprise reporting solutions supporting 15+ stakeholders.</li>
+        <li>Designed executive Tableau dashboards tracking revenue, P&L, cost variance, forecasting (+35% visibility).</li>
+        <li>Built scalable Tableau data models establishing single source of truth.</li>
+        <li>Optimized SQL queries on Amazon Redshift processing 5M+ records monthly.</li>
+        <li>Improved dashboard performance by 25% via indexing & query tuning.</li>
+        <li>Performed advanced data validation & reconciliation ensuring 99% data accuracy.</li>
+        <li>Automated recurring financial reporting reducing manual effort by 40%.</li>
+        <li>Implemented Row-Level Security & governance policies in Tableau Server.</li>
+        <li>Led requirement gathering & broke down BRDs into functional specifications.</li>
+        <li>Supported UAT, release management & production issue root cause analysis.</li>
+        <li>Collaborated in Agile/Scrum for sprint planning & stakeholder demos.</li>
+        <li>Integrated ERP, sales & operational datasets into enterprise warehouse.</li>
+      </ul>
+    </div>
+
+    <!-- J & J MedTech -->
+    <div class="exp-card fade-in">
+      <h3>J & J MedTech</h3>
+      <h6 class="text-primary">Data Analyst | Sep 2021 – Nov 2024 | New Jersey</h6>
+      <ul>
+        <li>Designed optimized MySQL schemas managing 3M+ healthcare records.</li>
+        <li>Automated ETL processes using SQL & Databricks (45% time reduction).</li>
+        <li>Developed reimbursement & compliance reporting dashboards in Tableau.</li>
+        <li>Integrated EMR, claims & lab datasets into unified data warehouse models.</li>
+        <li>Built predictive models (Decision Trees, Logistic Regression) improving outreach by 12%.</li>
+        <li>Performed EDA using Python (Pandas, NumPy) to uncover anomalies.</li>
+        <li>Implemented HIPAA-compliant governance & validation frameworks.</li>
+        <li>Created executive-ready compliance & audit reporting solutions.</li>
+        <li>Optimized SQL queries using indexing & window functions.</li>
+        <li>Collaborated with AWS cloud teams for pipeline improvements.</li>
+        <li>Delivered drill-through dashboards for secure self-service analytics.</li>
+        <li>Presented analytical insights to senior leadership teams.</li>
+      </ul>
+    </div>
+
+    <!-- BCBS -->
+    <div class="exp-card fade-in">
+      <h3>BCBS</h3>
+      <h6 class="text-primary">Data Analyst | Dec 2018 – Aug 2021 | Illinois</h6>
+      <ul>
+        <li>Gathered business requirements from underwriting & finance stakeholders.</li>
+        <li>Designed Tableau & Power BI dashboards tracking claims & loss ratios (+30% visibility).</li>
+        <li>Extracted & transformed 4M+ policy records using complex SQL.</li>
+        <li>Built RLS-enabled dashboards ensuring HIPAA/GDPR compliance.</li>
+        <li>Integrated anomaly detection outputs into BI dashboards.</li>
+        <li>Developed Python scripts for API-based data extraction automation.</li>
+        <li>Created logical & physical data models aligned with EDW standards.</li>
+        <li>Performed trend & variance analysis to identify underwriting losses.</li>
+        <li>Supported actuarial predictive modeling datasets.</li>
+        <li>Implemented KPI governance & centralized documentation.</li>
+        <li>Conducted UAT sessions improving dashboard adoption rates.</li>
+        <li>Worked in Agile environment with cross-functional teams.</li>
+      </ul>
+    </div>
+
+    <!-- Cyient -->
+    <div class="exp-card fade-in">
+      <h3>Cyient</h3>
+      <h6 class="text-primary">Jr. Data Analyst | Aug 2015 – Sep 2018 | India</h6>
+      <ul>
+        <li>Developed interactive Power BI dashboards improving reporting efficiency by 25%.</li>
+        <li>Integrated SQL Server, AWS & Databricks datasets into unified BI models.</li>
+        <li>Designed A/B testing dashboards improving campaign performance by 15%.</li>
+        <li>Performed hypothesis testing & Bayesian statistical analysis.</li>
+        <li>Built ETL pipelines for NoSQL & structured datasets.</li>
+        <li>Developed Python scripts for data cleaning & transformation.</li>
+        <li>Conducted predictive analytics using Scikit-learn models.</li>
+        <li>Optimized query performance by 15% using indexing strategies.</li>
+        <li>Implemented RLS security & governance frameworks.</li>
+        <li>Designed star & snowflake schema data models.</li>
+        <li>Performed root cause analysis for operational insights.</li>
+        <li>Collaborated with product & engineering teams for analytics solutions.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.experience-page {
+  padding-top: 100px;
+}
+
+.exp-card {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+[data-theme="dark"] .exp-card {
+  background: rgba(30,30,30,0.85);
+}
+
+.exp-card:hover {
+  transform: translateY(-8px);
+}
+
+.exp-card ul {
+  margin-top: 15px;
+}
+
+.exp-card li {
+  margin-bottom: 8px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+const faders = document.querySelectorAll(".fade-in");
+const appearOptions = { threshold: 0.2 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+<%- include("partials/footer") %>

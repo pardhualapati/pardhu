@@ -1,0 +1,70 @@
+<%- include("partials/header") %>
+
+<section class="contact-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+      <!-- LEFT SIDE INFO -->
+      <div class="col-lg-5 fade-in">
+        <h2 class="fw-bold mb-4">Let’s Connect</h2>
+
+        <p class="mb-4">
+          I’m open to full-time, contract (C2C / C2H), and analytics consulting opportunities.
+          Let’s collaborate on data engineering, BI dashboards, cloud analytics,
+          or enterprise reporting solutions.
+        </p>
+
+        <div class="contact-info mb-4">
+          <p>
+            <i class="fas fa-location-dot me-2 text-primary"></i>
+            Birmingham, AL
+          </p>
+          <p>
+            <i class="fas fa-envelope me-2 text-primary"></i>
+            pardhusskrishna@gmail.com
+          </p>
+        </div>
+
+        <div class="social-icons fs-4">
+          <a href="https://github.com/pardhualapati" target="_blank" class="me-3">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/pardhualapati" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE FORM -->
+      <div class="col-lg-7 fade-in">
+        <div class="contact-card">
+          <form action="/contact" method="POST">
+
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea name="message" rows="5" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

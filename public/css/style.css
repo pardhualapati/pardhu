@@ -1,0 +1,257 @@
+/* ============================= */
+/* ROOT VARIABLES */
+/* ============================= */
+
+:root {
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --accent: #2563eb;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --section-bg: #111827;
+  --card-bg: #1e293b;
+  --accent: #3b82f6;
+}
+
+/* ============================= */
+/* GLOBAL */
+/* ============================= */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.4s ease;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+.hero-section {
+  padding-top: 160px;
+  padding-bottom: 100px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+[data-theme="dark"] .hero-section {
+  background: linear-gradient(135deg, #111827, #0f172a);
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+}
+
+.hero-subtitle {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  color: #b98809; /* Mustard */
+}
+
+.hero-section .lead {
+  font-size: 1.1rem;
+  max-width: 550px;
+}
+
+/* Profile Image */
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--accent);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* SKILLS SECTION */
+/* ============================= */
+
+.skills-section {
+  padding: 100px 0;
+  background: var(--section-bg);
+}
+
+.skill-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  transition: 0.4s ease;
+  height: 100%;
+}
+
+.skill-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.btn-primary {
+  background-color: var(--accent);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-outline-dark {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.btn-outline-dark:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* ============================= */
+/* SAFE FADE ANIMATION */
+/* ============================= */
+
+/* Default visible */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Only hide when JS enables animation */
+.js-enabled .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-enabled .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/* CONTACT SECTION */
+/* ============================= */
+
+.contact-section {
+  padding: 160px 0 100px 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+[data-theme="dark"] .contact-section {
+  background: linear-gradient(135deg, #111827, #0f172a);
+}
+
+/* Left Side Text */
+
+.contact-section h2 {
+  font-size: 2.5rem;
+}
+
+.contact-section p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* Contact Card */
+
+.contact-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Inputs */
+
+.contact-card .form-control {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.contact-card .form-control:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .contact-card .form-control {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #475569;
+}
+
+/* Social Icons */
+
+.social-icons a {
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* RESPONSIVE FIXES */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .hero-section {
+    padding-top: 180px;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+    margin-top: 30px;
+  }
+
+  .contact-section {
+    padding-top: 140px;
+  }
+}

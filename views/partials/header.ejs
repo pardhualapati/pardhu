@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title><%= typeof title !== 'undefined' ? title : "Portfolio" %> | Pardhu Alapati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        /* Glass Navbar */
+        .glass-navbar {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .glass-navbar {
+            background: rgba(20, 20, 20, 0.8);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            position: relative;
+            margin-left: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -4px;
+            background: #0d6efd;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Resume Button */
+        .resume-btn {
+            margin-left: 20px;
+            border-radius: 25px;
+            padding: 6px 16px;
+            font-weight: 500;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 20px;
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        [data-theme="dark"] .nav-link,
+        [data-theme="dark"] .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        /* Sticky Shadow on Scroll */
+        .navbar-scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top glass-navbar" id="mainNavbar">
+    <div class="container">
+        <a class="navbar-brand text-primary" href="/">
+            Pardhu Alapati
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                   <a class="nav-link" href="/experience">Experience</a>     </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+
+                <!-- Resume Download -->
+            <li class="nav-item">
+  <button class="btn btn-primary resume-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#resumeModal">
+    <i class="bi bi-file-earmark-text"></i> Resume
+  </button>
+</li>
+
+                <!-- Theme Toggle -->
+                <li class="nav-item">
+                    <span class="theme-toggle" id="themeToggle">
+                        <i class="bi bi-moon-fill"></i>
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const toggle = document.getElementById("themeToggle");
+    const html = document.documentElement;
+
+    toggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        toggle.innerHTML = newTheme === "dark"
+            ? '<i class="bi bi-sun-fill"></i>'
+            : '<i class="bi bi-moon-fill"></i>';
+
+        localStorage.setItem("theme", newTheme);
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        html.setAttribute("data-theme", savedTheme);
+        toggle.innerHTML = savedTheme === "dark"
+            ? '<i class="bi bi-sun-fill"></i>'
+            : '<i class="bi bi-moon-fill"></i>';
+    }
+
+    // Navbar shadow on scroll
+    window.addEventListener("scroll", function() {
+        const navbar = document.getElementById("mainNavbar");
+        navbar.classList.toggle("navbar-scrolled", window.scrollY > 20);
+    });
+</script>
